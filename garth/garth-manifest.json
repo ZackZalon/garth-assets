@@ -1,0 +1,14 @@
+{
+  "version": "preview-2026.04.09",
+  "bundle_version": "preview-2026.04.09",
+  "required_ram_gb": 8,
+  "download_size_gb": 3,
+  "bootstrap_only": true,
+  "message": "GARTH bootstrap channel initialized. Full model bundle publishing is not enabled yet.",
+  "channel": "preview",
+  "runtime": {
+    "service_name": "garth",
+    "mode": "bootstrap"
+  }
+}
+

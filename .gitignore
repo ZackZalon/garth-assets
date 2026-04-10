@@ -1,0 +1,6 @@
+downloads/
+staging/
+bundle/
+dist/
+*.log
+
