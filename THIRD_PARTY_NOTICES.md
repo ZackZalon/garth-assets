@@ -7,5 +7,9 @@ Current upstream model source under evaluation:
 - License: Apache 2.0
 - Official model card: https://huggingface.co/google/gemma-4-E4B
 
-Any GARTH distribution that contains upstream model artifacts must preserve the required license and attribution notices.
+Current upstream runtime source under evaluation:
+- Google LiteRT-LM
+- License: Apache 2.0
+- Official repository: https://github.com/google-ai-edge/LiteRT-LM
 
+Any GARTH distribution that contains upstream model artifacts must preserve the required license and attribution notices.

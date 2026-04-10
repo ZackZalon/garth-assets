@@ -1,14 +1,67 @@
 {
-  "version": "preview-2026.04.09",
-  "bundle_version": "preview-2026.04.09",
+  "version": "preview-2026.04.10",
+  "bundle_version": "preview-2026.04.10",
   "required_ram_gb": 8,
   "download_size_gb": 3,
   "bootstrap_only": true,
-  "message": "GARTH bootstrap channel initialized. Full model bundle publishing is not enabled yet.",
+  "message": "GARTH preview runtime is ready. Hidden local runtime dependencies will be staged automatically during install.",
   "channel": "preview",
+  "default_model": "q4_k_m",
+  "available_models": [
+    { "id": "q2_k", "label": "Q2_K", "description": "Smallest memory footprint under evaluation." },
+    { "id": "q3_k_s", "label": "Q3_K_S", "description": "Very compact quantization for low-RAM systems." },
+    { "id": "q3_k_m", "label": "Q3_K_M", "description": "Compact quantization with improved answer quality." },
+    { "id": "q3_k_l", "label": "Q3_K_L", "description": "Larger Q3 variant for better retention." },
+    { "id": "iq4_xs", "label": "IQ4_XS", "description": "4-bit importance-aware quantization under evaluation." },
+    { "id": "q4_k_s", "label": "Q4_K_S", "description": "Efficient 4-bit quantization for everyday testing." },
+    { "id": "q4_k_m", "label": "Q4_K_M", "description": "Likely commercial default for local GARTH installs." },
+    { "id": "q5_k_s", "label": "Q5_K_S", "description": "Higher quality 5-bit quantization with moderate RAM needs." },
+    { "id": "q5_k_m", "label": "Q5_K_M", "description": "Higher fidelity 5-bit quantization for evaluation." },
+    { "id": "q6_k", "label": "Q6_K", "description": "High quality 6-bit quantization for stronger local answers." },
+    { "id": "q8_0", "label": "Q8_0", "description": "Near-full quality quantization for larger local systems." },
+    { "id": "f16", "label": "F16", "description": "Full precision baseline for comparison." }
+  ],
   "runtime": {
     "service_name": "garth",
-    "mode": "bootstrap"
+    "mode": "bootstrap",
+    "engine": "garth"
+  },
+  "runtime_downloads": {
+    "macos_arm64": {
+      "litert_engine": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/litert_lm_main.macos_arm64",
+        "filename": "litert_lm_main.macos_arm64",
+        "install_name": "garth-engine"
+      },
+      "litert_cli": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/lit_macos_arm64",
+        "filename": "lit_macos_arm64",
+        "install_name": "garth-tool"
+      }
+    },
+    "windows_x86_64": {
+      "litert_engine": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/litert_lm_main.windows_x86_64.exe",
+        "filename": "litert_lm_main.windows_x86_64.exe",
+        "install_name": "garth-engine.exe"
+      },
+      "litert_cli": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/lit_windows_x86_64.exe",
+        "filename": "lit_windows_x86_64.exe",
+        "install_name": "garth-tool.exe"
+      }
+    },
+    "linux_x86_64": {
+      "litert_engine": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/litert_lm_main.linux_x86_64",
+        "filename": "litert_lm_main.linux_x86_64",
+        "install_name": "garth-engine"
+      },
+      "litert_cli": {
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/download/v0.10.1/lit_linux_x86_64",
+        "filename": "lit_linux_x86_64",
+        "install_name": "garth-tool"
+      }
+    }
   }
 }
-
